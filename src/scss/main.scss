@@ -1,10 +1,31 @@
 
-@use './abstracts' as *;
+
+@use './components/nav';
+@use './components/modal';
+@use './components/slider';
+@use './components/buttons';
+@use './components/lists';
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
 
 body {
-  background: $orange;
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+
+
+
+
+
+// Attribution
 
 .attribution {
   font-size: 11px;

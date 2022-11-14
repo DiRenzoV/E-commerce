@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+
+.list {
+  list-style: none;
+
+  &__item {
+    margin: 1rem 0;
+  }
+
+  &__item a {
+    text-decoration: none;
+    color: $very-dark-blue;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}

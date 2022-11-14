@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+
+
+img {
+  width: 100%;
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 1.2rem;
+  position: relative;
+}
+
+
+.avatar {
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.cart {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+
+.hamburger {
+  background-image: url(/src/images/icon-menu.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+
+  @include mq() {
+    display: none;
+  }
+}

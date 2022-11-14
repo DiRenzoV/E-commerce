@@ -23,15 +23,63 @@
       rel="stylesheet"
     />
 
+    <!-- Javascript Files -->
+    <script src="/src/script.js" defer></script>
+
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
-    <h1>uahsdjasd</h1>
+    <header>
+      <nav class="nav">
+        <div class="hamburger" data-hamburger></div>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="" />
+        </div>
+        <div class="modal" data-modal>
+          <div class="menu" data-menu>
+            <span class="close" data-close-button></span>
+            <ul class="list">
+              <li class="list__item"><a href="#">Collections</a></li>
+              <li class="list__item"><a href="#">Men</a></li>
+              <li class="list__item"><a href="#">Women</a></li>
+              <li class="list__item"><a href="#">About</a></li>
+              <li class="list__item"><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cart"><img src="./images/icon-cart.svg" alt="" /></div>
+        <div class="avatar"><img src="./images/image-avatar.png" alt="" /></div>
+      </nav>
+    </header>
+    <main>
+      <div class="carousel">
+        <div class="carousel__track" data-track>
+          <div class="slide current-slide">
+            <img src="/src/images/image-product-1.jpg" alt="" data-slide />
+          </div>
+          <div class="slide">
+            <img src="/src/images/image-product-2.jpg" alt="" data-slide />
+          </div>
+          <div class="slide">
+            <img src="/src/images/image-product-3.jpg" alt="" data-slide />
+          </div>
+          <div class="slide">
+            <img src="/src/images/image-product-4.jpg" alt="" data-slide />
+          </div>
+        </div>
+        <button class="btn btn--left" data-prev-button>
+          <img src="/src/images/icon-previous.svg" alt="" />
+        </button>
+        <button class="btn btn--right" data-next-button>
+          <img src="/src/images/icon-next.svg" alt="" />
+        </button>
+      </div>
+    </main>
 
-    Collections Men Women About Contact Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to cart
+    Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are
+    your perfect casual wear companion. Featuring a durable rubber outer sole,
+    they’ll withstand everything the weather can offer. $125.00 50% $250.00 0
+    Add to cart
 
     <div class="attribution">
       Challenge by
