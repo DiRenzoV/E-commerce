@@ -1,0 +1,7 @@
+@mixin hoverAnimation($size, $transition) {
+  transition: $transition;
+
+  &:hover {
+    transform: scale($size);
+  }
+}

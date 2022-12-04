@@ -1,0 +1,70 @@
+
+@use '../abstracts' as *;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  position: relative;
+}
+
+
+.container {
+  padding: 2rem;
+}
+
+.company-name {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: $orange;
+  text-shadow: 0 0 1px $orange;
+}
+
+.header {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 1px $very-dark-blue;
+  color: $very-dark-blue;
+  margin: 1.8rem 0;
+
+  @include mq(1440px) {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.body-text {
+  font-size: 1.5rem;
+  color: rgba($dark-grayish-blue, 0.7);
+  text-shadow: 0 0 1px $dark-grayish-blue;
+  
+  @include mq(1440px) {
+    font-size: 2rem;
+  }
+}
+
+.price {
+  font-weight: 700;
+}
+
+.btn--add, .btn--remove {
+  color: $orange;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 1px $orange; 
+}
+
+.quantity {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.btn--cta {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}

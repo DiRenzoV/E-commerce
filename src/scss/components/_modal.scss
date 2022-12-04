@@ -1,30 +1,49 @@
+@use '../abstracts' as *;
 
 .modal {
   position: absolute;
   top: 0;
+  right: 100%;
   left: 0;
-  max-width: 0;
   height: 100vh;
   background-color: rgba(black, .6);
   z-index: 1;
   overflow: hidden;
-  transition: 350ms;
+  opacity: 0;
+  transition: 400ms;
+
+  @include mq(768px) {
+    position: static;
+    height: fit-content;
+    overflow: visible;
+    opacity: 1;
+  }
 }
 
 .modal.open {
   right: 0;
-  max-width: 100%;
+  opacity: 1;
 }
 
 .menu {
   max-width: 0;
   height: 100%;
   background: white;
-  padding: 2rem;
+  transition: 600ms;
+  transition-delay: 200ms;
+  overflow: hidden;
+
+  @include mq(768px) {
+    height: initial;
+    z-index: 10;
+    overflow: visible;
+    
+  }
 }
 
 .modal.open .menu {
   max-width: 60%;
+  padding: 2rem;
 }
 
 .close {
@@ -35,4 +54,11 @@
   height: 1.5rem;
   margin-bottom: 4rem;
   cursor: pointer;
+
+  @include hoverAnimation(1.35, .25s);
+
+  @include mq(768px) {
+    display: none;
+  }
 }
+

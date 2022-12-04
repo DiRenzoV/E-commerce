@@ -3,8 +3,33 @@
 .carousel {
   position: relative;
   height: 320px;
-  max-width: 375px;
+  max-width: 450px;
   overflow: hidden;
+  margin: auto;
+
+  @include mq(450px) {
+    border-radius: 2rem;
+  }
+
+  @include mq(768px) {
+    // margin: 0;
+    width: 375px;
+    height: 400px;
+  }
+
+  @include mq(1024px) {
+    // margin: 0;
+    width: 340px;
+    height: 360px;
+  }
+
+  @include mq(1440px) {
+    // margin: 0;
+    width: 400px;
+    height: 450px;
+  }
+
+ 
 
   &__track {
     position: relative;
@@ -19,7 +44,102 @@
   height: 100%;
 
   & img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
 }
+
+// thumbnails
+.thumbnails {
+  margin-top: 1rem;
+  width: 100%;
+  height: 10rem;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+
+  @include mq(768px) {
+    display: flex;
+  }
+
+  @include mq(1440px) {
+    margin-top: 1.5rem;
+  }
+  
+
+}
+
+.thumbnail {
+  width: 8rem;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .2s;
+  object-fit: cover;
+  background-color: white;
+
+  @include mq(1440px) {
+    width: 9rem;
+  }
+  
+  &:hover {
+    opacity: .7;
+  }
+
+  &.current-slide {
+    border: 4px solid $orange;
+
+    & img {
+      opacity: .4;
+    }
+  }
+}
+
+.slider__container {
+  @include mq(1024px) {
+    cursor: pointer;
+  }
+}
+
+
+.lightbox {
+  background-color: rgba(black, .5);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+
+  & .slider__container {
+    // width: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    @include mq(1440px) {
+      width: 450px;
+    }
+    
+  }
+
+  &__close-button {
+    width: 2rem;
+    position: absolute;
+    top: -3.5rem;
+    right: 0;
+    cursor: pointer;
+
+    & path {
+      transition: .2s;
+    }
+    
+    &:hover path {
+      fill: $orange;
+    }
+  }
+}
+

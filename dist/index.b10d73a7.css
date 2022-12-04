@@ -14,11 +14,21 @@ img {
   width: 2.2rem;
   height: 2.2rem;
   cursor: pointer;
+  transition: all .25s;
+}
+
+.avatar:hover {
+  transform: scale(1.15);
 }
 
 .cart {
   cursor: pointer;
   margin-left: auto;
+  transition: all .25s;
+}
+
+.cart:hover {
+  transform: scale(1.15);
 }
 
 .hamburger {
@@ -28,6 +38,11 @@ img {
   background-image: url("icon-menu.2cbbe279.svg");
   background-position: center;
   background-repeat: no-repeat;
+  transition: all .25s;
+}
+
+.hamburger:hover {
+  transform: scale(1.2);
 }
 
 @media (min-width: 1440px) {
@@ -37,19 +52,20 @@ img {
 }
 
 .modal {
-  max-width: 0;
   height: 100vh;
   z-index: 1;
+  opacity: 0;
   background-color: #0009;
-  transition: all .35s;
+  transition: all .4s;
   position: absolute;
   top: 0;
   left: 0;
+  right: 100%;
   overflow: hidden;
 }
 
 .modal.open {
-  max-width: 100%;
+  opacity: 1;
   right: 0;
 }
 
@@ -57,11 +73,13 @@ img {
   max-width: 0;
   height: 100%;
   background: #fff;
-  padding: 2rem;
+  transition: all .6s .2s;
+  overflow: hidden;
 }
 
 .modal.open .menu {
   max-width: 60%;
+  padding: 2rem;
 }
 
 .close {
@@ -71,7 +89,44 @@ img {
   background-image: url("icon-close.cac3d951.svg");
   background-repeat: no-repeat;
   margin-bottom: 4rem;
+  transition: all .25s;
   display: block;
+}
+
+.close:hover {
+  transform: scale(1.35);
+}
+
+.list {
+  list-style: none;
+}
+
+.list__item {
+  margin: 1rem 0;
+}
+
+.list__item a {
+  color: #1d2025;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+
+.list__item a:before {
+  content: "";
+  height: 2px;
+  width: 105%;
+  transform-origin: 0;
+  background-color: #ff7d1a;
+  transition: all .25s;
+  position: absolute;
+  bottom: -3px;
+  transform: scaleX(0);
+}
+
+.list__item a:hover:before {
+  transform: scaleX(1);
 }
 
 .carousel {
@@ -106,7 +161,7 @@ img {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  transition: all .25s;
+  transition: opacity .25s, transform 30ms;
   display: flex;
   position: absolute;
   top: 50%;
@@ -125,19 +180,9 @@ img {
   right: 15px;
 }
 
-.list {
-  list-style: none;
-}
-
-.list__item {
-  margin: 1rem 0;
-}
-
-.list__item a {
-  color: #1d2025;
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-decoration: none;
+.is-disabled {
+  opacity: .3;
+  cursor: initial;
 }
 
 *, :before, :after {

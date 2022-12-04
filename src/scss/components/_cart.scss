@@ -1,0 +1,98 @@
+@use '../abstracts' as *;
+
+.cart {
+  position: absolute;
+  top: 6rem;
+  width: 95%;
+  max-width: 600px;
+  height: 275px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(black, .5);
+  background: white;
+  z-index: 1;
+  overflow: hidden;
+  transition: .6s ease-in-out;
+  padding: 2rem;
+  transform: translateY(-140%);
+  @include mq(1440px) {
+   transform: translateY(-170%) translateX(-50%);
+   left: 50%;
+ }
+
+
+  &__header {
+    height: 50px;
+    border-bottom: 2px solid $grayish-blue;
+  }
+
+  &__name {
+    color: $very-dark-blue;
+    font-size: 1.8rem;
+    text-shadow: 0 0 1px $very-dark-blue;
+  }
+
+
+  &__body {
+    margin-top: 2rem;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 10rem;
+  }
+
+  
+}
+
+.cart.open {
+  transform: translateX(0);
+
+  @include mq(1440px) {
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  font-weight: 700;
+
+  &__image {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  & .holder {
+    line-height: 1.8;
+  }
+
+  &__name, &__price, &__quantity {
+    color: rgba($very-dark-blue, 0.5);
+  }
+
+  &__price, &__quantity, & .total {
+    font-size: 1.5rem;
+  }
+
+  &__name {
+    font-size: 1.7rem;
+  }
+
+}
+
+.total {
+  margin-left: 1rem;
+}
+
+.delete {
+  margin-left: auto;
+  cursor: pointer;
+
+  @include hoverAnimation(1.2, 0.2s)
+}

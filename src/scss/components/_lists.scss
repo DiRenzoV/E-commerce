@@ -4,14 +4,45 @@
 .list {
   list-style: none;
 
-  &__item {
-    margin: 1rem 0;
+  @include mq(768px) {
+    display: flex;
+    gap: 2.5rem;
+    margin-left: 4rem;
   }
 
-  &__item a {
-    text-decoration: none;
-    color: $very-dark-blue;
-    font-size: 1.6rem;
-    font-weight: 700;
+  &__item {
+    margin: 1rem 0;
+
+    & a {
+      text-decoration: none;
+      color: $very-dark-blue;
+      font-size: 1.6rem;
+      font-weight: 700;
+      position: relative;
+
+      @include mq(1440px) {
+        font-size: 2rem;
+        color: rgba($very-dark-blue, .5);
+      }
+    }
+
+    & a::before {
+      content: '';
+      transform: scaleX(0);
+      position: absolute;
+      bottom: -3px;
+      height: 2px;
+      width: 105%;
+      background-color: $orange;
+      transform-origin: left;
+      transition: .25s ease;
+    }
+
+    & a:hover::before {
+      transform: scaleX(1);
+    }
+
   }
+
+  
 }

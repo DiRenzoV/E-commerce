@@ -1,11 +1,8 @@
 @use '../abstracts' as *;
 
-
-
 img {
   width: 100%;
 }
-
 
 .nav {
   display: flex;
@@ -13,20 +10,66 @@ img {
   gap: 1.5rem;
   padding: 1.5rem 1.2rem;
   position: relative;
+
+  @include mq(768px) {
+    padding: 3rem 0;
+    border-bottom: 1px solid $dark-grayish-blue;
+  }
+
+ 
 }
 
+.logo {
+  @include mq(1440px) {
+    width: 16rem;
+  }
+}
 
 .avatar {
   width: 2.2rem;
   height: 2.2rem;
   cursor: pointer;
+  border-radius: 50%;
+  // border: 2px solid $orange;
+  
+  & img {
+    @include hoverAnimation(1.15, .25s);
+  }
+
+  @include mq(1440px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
 }
 
-.cart {
+.cart-icon {
   margin-left: auto;
   cursor: pointer;
-}
+  position: relative;
+  
+  @include hoverAnimation(1.15, .25s);
 
+  @include mq(1440px) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  & .item-indicator {
+    background: $orange;
+    width: fit-content;
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 1rem;
+    top: -5px;
+    right: -5px;
+    display: none;
+  }
+}
 
 .hamburger {
   background-image: url(/src/images/icon-menu.svg);
@@ -35,8 +78,10 @@ img {
   width: 2.2rem;
   height: 2.2rem;
   cursor: pointer;
-
-  @include mq() {
+  
+  @include hoverAnimation(1.2, .25s);
+  
+  @include mq(768px) {
     display: none;
   }
 }

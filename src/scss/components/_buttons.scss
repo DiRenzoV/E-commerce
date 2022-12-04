@@ -1,6 +1,6 @@
+@use '../abstracts' as *;
 
-
-.btn {
+.carousel__button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: 250ms;
+  transition: opacity 250ms ease, transform 30ms ease;
 
   & img {
     width: initial;
@@ -25,4 +25,88 @@
   &--right {
     right: 15px;
   }
+
+  @include mq(768px) {
+    display: none;
+  }
+}
+
+.is-disabled {
+  opacity: .3;
+  cursor: initial;
+}
+
+
+.add-remove {
+  background: $light-grayish-blue;
+  padding: 1.8rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(1024px) {
+    width: 40%;
+  }
+}
+
+.btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  
+  @include hoverAnimation(1.2, .125s);
+}
+
+.btn--cta {
+  background: $orange;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1.5rem auto;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba($orange, .3);
+
+  &:hover {
+    background-color: rgba($orange, .9);
+  }
+
+  @include mq(1024px) {
+    margin: 0;
+  }
+}
+
+.button__icon {
+  width: 3rem;
+
+  & path {
+    fill: white;
+  }
+}
+
+.buttons-holder {
+  @include mq(1024px) {
+    display: flex;
+    gap: 1rem;
+    margin-top: 6rem;
+  }
+}
+
+.btn--checkout {
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: $orange;
+  width: 100%;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  display: none;
 }
