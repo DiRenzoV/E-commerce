@@ -4,12 +4,10 @@
   
   @include mq(1024px) {
     max-width: 380px;
-    // margin: 0 auto;
   }
 
   @include mq(1440px) {
     max-width: 450px;
-    // margin: 0 auto;
   }
 }
 
@@ -21,12 +19,9 @@ main {
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
   }
-
+  
   @include mq(1024px) {
     padding: 8rem 5rem;
-    // display: grid;
-    // place-items: center;
-    // grid-template-columns: repeat(2, 1fr);
   }
 }
 

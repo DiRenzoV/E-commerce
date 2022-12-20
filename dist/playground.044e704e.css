@@ -129,11 +129,6 @@ img {
   position: relative;
 }
 
-.cart-icon:hover path {
-  fill: #ff7d1a;
-  transition: all .25s;
-}
-
 .cart-icon:hover {
   transform: scale(1.15);
 }
@@ -319,8 +314,8 @@ img {
 
 @media (min-width: 1024px) {
   .carousel {
-    width: 390px;
-    height: 420px;
+    width: 340px;
+    height: 360px;
   }
 }
 
@@ -396,10 +391,6 @@ img {
   border: 4px solid #ff7d1a;
 }
 
-.slider__container {
-  position: relative;
-}
-
 @media (min-width: 768px) {
   .slider__container {
     cursor: pointer;
@@ -408,7 +399,6 @@ img {
 
 .lightbox {
   z-index: 2;
-  isolation: isolate;
   background-color: #00000080;
   display: none;
   position: absolute;
@@ -425,10 +415,8 @@ img {
 
 .lightbox__close-button {
   width: 2rem;
-  height: 2rem;
   text-align: center;
   cursor: pointer;
-  display: none;
   position: absolute;
   top: -3.5rem;
   right: 0;
@@ -445,10 +433,6 @@ img {
 
 .lightbox .thumbnail {
   pointer-events: all;
-}
-
-.lightbox-open {
-  display: block;
 }
 
 .carousel__button {
@@ -486,16 +470,14 @@ img {
 
 .lightbox .carousel__button {
   display: block;
-  top: 40%;
-  transform: translateX(0);
 }
 
 .lightbox .carousel__button--left {
-  left: -20px;
+  left: -25px;
 }
 
 .lightbox .carousel__button--right {
-  right: -20px;
+  right: -25px;
 }
 
 .is-disabled {
@@ -581,9 +563,6 @@ img {
   padding: 2rem;
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.is-hidden {
   display: none;
 }
 
@@ -657,7 +636,7 @@ img {
 
 .cart {
   width: 95%;
-  max-width: 450px;
+  max-width: 600px;
   height: 275px;
   z-index: 1;
   background: #fff;
@@ -694,23 +673,9 @@ img {
 }
 
 .cart__text {
-  width: fit-content;
   text-align: center;
   margin-top: 10rem;
-  margin-left: 50%;
   font-size: 1.5rem;
-  position: relative;
-  transform: translateX(-50%);
-}
-
-.cart__text:before {
-  content: "";
-  height: .5px;
-  background-color: #000;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .cart.open {
@@ -769,32 +734,6 @@ img {
   transform: scale(1.2);
 }
 
-.delete:hover path {
-  fill: #ff7d1a;
-  transition: all .25s;
-}
-
-.thankyou {
-  color: #fff;
-  text-align: center;
-  background-color: #ff7d1a;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  inset: 0;
-}
-
-.thankyou__header {
-  margin-bottom: 1rem;
-  font-size: 4rem;
-}
-
-.thankyou__text {
-  font-size: 1.6rem;
-}
-
 @media (min-width: 1024px) {
   .container {
     max-width: 380px;
@@ -840,4 +779,4 @@ img {
   }
 }
 
-/*# sourceMappingURL=index.044e704e.css.map */
+/*# sourceMappingURL=playground.044e704e.css.map */

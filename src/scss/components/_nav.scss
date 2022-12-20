@@ -48,6 +48,11 @@ img {
   cursor: pointer;
   position: relative;
   
+  &:hover path {
+    fill: $orange;
+    transition: .25s;
+  }
+
   @include hoverAnimation(1.15, .25s);
 
   @include mq(1440px) {

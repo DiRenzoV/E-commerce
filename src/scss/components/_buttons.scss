@@ -31,6 +31,20 @@
   }
 }
 
+.lightbox .carousel__button {
+  display: block;
+  top: 40%;
+  transform: translateX(0);
+}
+
+.lightbox .carousel__button--left {
+  left: -20px;
+}
+
+.lightbox .carousel__button--right {
+  right: -20px;
+}
+
 .is-disabled {
   opacity: .3;
   cursor: initial;
@@ -108,5 +122,8 @@
   padding: 2rem;
   border-radius: 1rem;
   margin-top: 3rem;
+}
+
+.is-hidden {
   display: none;
 }
