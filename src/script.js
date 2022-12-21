@@ -226,18 +226,18 @@ function updateThumbnails(currentThumbnail, targetThumbnail) {
 
 
 // Slide to right.
-function slideRight() {
-  const currentSlide = track.querySelector('.current-slide');
-  const nextSlide = currentSlide.nextElementSibling;
-  const targetIndex = slides.findIndex(slide => slide === nextSlide)
-  const currentThumbnail = sliderNav.querySelector('.current-slide');
-  const nextThumbnail = currentThumbnail.nextElementSibling;
+// function slideRight() {
+//   const currentSlide = track.querySelector('.current-slide');
+//   const nextSlide = currentSlide.nextElementSibling;
+//   const targetIndex = slides.findIndex(slide => slide === nextSlide)
+//   const currentThumbnail = sliderNav.querySelector('.current-slide');
+//   const nextThumbnail = currentThumbnail.nextElementSibling;
 
-  if (targetIndex === -1) return;
-  moveToSlide(track, currentSlide, nextSlide);
-  updateArrows(slides, targetIndex, prevButton, nextButton);
-  updateThumbnails(currentThumbnail, nextThumbnail);
-}
+//   if (targetIndex === -1) return;
+//   moveToSlide(track, currentSlide, nextSlide);
+//   updateArrows(slides, targetIndex, prevButton, nextButton);
+//   updateThumbnails(currentThumbnail, nextThumbnail);
+// }
 
 nextButton.addEventListener('click', () => {
   const currentSlide = track.querySelector('.current-slide');
@@ -255,18 +255,18 @@ nextButton.addEventListener('click', () => {
 });
 
 // Slide to left.
-function slideLeft() {
-  const currentSlide = track.querySelector('.current-slide');
-  const prevSlide = currentSlide.previousElementSibling;
-  const targetIndex = slides.findIndex(slide => slide === prevSlide);
-  const currentThumbnail = sliderNav.querySelector('.current-slide');
-  const prevThumbnail = currentThumbnail.previousElementSibling;
+// function slideLeft() {
+//   const currentSlide = track.querySelector('.current-slide');
+//   const prevSlide = currentSlide.previousElementSibling;
+//   const targetIndex = slides.findIndex(slide => slide === prevSlide);
+//   const currentThumbnail = sliderNav.querySelector('.current-slide');
+//   const prevThumbnail = currentThumbnail.previousElementSibling;
 
-  if (targetIndex === -1) return;
-  moveToSlide(track, currentSlide, prevSlide);
-  updateArrows(slides, targetIndex, prevButton, nextButton);
-  updateThumbnails(currentThumbnail, prevThumbnail);
-}
+//   if (targetIndex === -1) return;
+//   moveToSlide(track, currentSlide, prevSlide);
+//   updateArrows(slides, targetIndex, prevButton, nextButton);
+//   updateThumbnails(currentThumbnail, prevThumbnail);
+// }
 
 prevButton.addEventListener('click', () => {
   const currentSlide = track.querySelector('.current-slide');
@@ -318,6 +318,7 @@ sliderContainer.addEventListener('click', () => {
   closeLightboxButton.style.display = 'block';
   closeLightboxButton.addEventListener('click', () => {
     lightbox.classList.remove('lightbox-open');
+    clearElement(lightbox)
   });
 
   // Lightbox slider.
@@ -326,10 +327,9 @@ sliderContainer.addEventListener('click', () => {
   const sliderNav = lightbox.querySelector('[data-slider-nav]');
   const thumbnails = [...sliderNav.children];
   
-  
   const nextButton = lightbox.querySelector('[data-next-button]')
-  nextButton.addEventListener('click', () => {
 
+  nextButton.addEventListener('click', () => {
     const currentSlide = track.querySelector('.current-slide');
     const nextSlide = currentSlide.nextElementSibling;
     const targetIndex = slides.findIndex(slide => slide === nextSlide)
@@ -343,8 +343,8 @@ sliderContainer.addEventListener('click', () => {
   });
 
   const prevButton = lightbox.querySelector('[data-prev-button]')
-  prevButton.addEventListener('click', () => {
 
+  prevButton.addEventListener('click', () => {
     const currentSlide = track.querySelector('.current-slide');
     const prevSlide = currentSlide.previousElementSibling;
     const targetIndex = slides.findIndex(slide => slide === prevSlide);
@@ -370,4 +370,5 @@ sliderContainer.addEventListener('click', () => {
     updateArrows(slides, targetIndex, prevButton, nextButton);
     updateThumbnails(currentThumbnail, targetThumbnail)
   });
+
 });

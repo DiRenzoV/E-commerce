@@ -21,7 +21,11 @@ main {
   }
   
   @include mq(1024px) {
-    padding: 8rem 5rem;
+    padding: 8rem 6rem;
+  }
+
+  @include mq(1440px) {
+    padding: 8rem 12rem;
   }
 }
 
